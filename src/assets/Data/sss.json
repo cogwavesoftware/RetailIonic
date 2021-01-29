@@ -1,0 +1,27 @@
+[
+    {
+        "CatCode": "1",
+        "ItemCode": 1001,
+        "ItemName": "Coffe",
+        "ItemRate": 55,
+        "Qty" : 0,
+        "Size" : "100 Ml",
+        "offerPercentage":10,
+        "MainItemCode":100,
+        "thumb":"http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,h_400,w_560/v1483635607/shutterstock_53287165_ilpulr.jpg",    
+    },
+    {
+        "CatCode": "1",
+        "ItemCode": 1002,
+        "ItemName": "Tea",
+        "ItemRate": 50,
+        "Qty" : 0,
+        "Size" : "100 Ml",
+        "offerPercentage":10, 
+        "MainItemCode":100,
+        "thumb":"http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,h_400,w_560/v1483635607/shutterstock_53287165_ilpulr.jpg",    
+    }
+   
+    
+
+]

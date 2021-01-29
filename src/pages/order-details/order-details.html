@@ -1,0 +1,76 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>{{"Orders" | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)="navcart()">
+                <ion-icon name="cart"></ion-icon>
+                <ion-badge class="carts" item-right color="danger">{{noOfItems}}</ion-badge>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+
+    
+<ion-content class="card-background-page" padding style="background-image: url('assets/images/bg.jpg')">
+  
+   
+    <div *ngIf="!isOrders()">
+        <div class="empty-list">
+            <ion-icon class="empty-cart" name="timer" item-left></ion-icon>
+            <p>{{"No Orders" | translate}} </p>
+        </div>
+
+    </div> 
+
+
+    <ion-card *ngFor="let order of orders" style="border-radius: 10px">
+      <ion-item class="card-h">
+        <ion-avatar item-start>
+          <img src="assets/img/receipt.png">
+        </ion-avatar>
+        <!-- <ion-avatar item-end>
+          <ion-icon name="qr-code-outline" (click)="ShowQRCode(order.BillNo,order.BillAmount)"  ></ion-icon>
+          <ion-badge color="blue">Click Image</ion-badge>
+        </ion-avatar> -->
+        <h2>OrderNo : {{order.TranscationNo}} </h2>
+        <!-- <ion-badge color="yellow">BillDate : {{order.BillDate | date}} </ion-badge> -->
+      </ion-item>
+       <ion-card-content class="card-b">
+        <ion-grid style="width: 100%; font-size:11px">
+          <ion-row style="font-weight: bolder">
+            <ion-col col-6>Item</ion-col>
+            <ion-col col-2>Price</ion-col>
+            <ion-col col-2>Qty</ion-col>
+            <ion-col col-2>Total</ion-col>
+          </ion-row>
+          <ion-row *ngFor="let food of order.Food">
+            <ion-col col-6>{{food.Food}} <ion-badge color="bucol">{{food.Comment}}</ion-badge> </ion-col>
+            <ion-col col-2>₹ {{food.Price}}</ion-col>
+            <ion-col col-2>{{food.Qty}}</ion-col>
+            <ion-col col-2>₹ {{food.Price*food.Qty}}</ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col col-12>
+              <hr style="color: black;">
+            </ion-col>
+          </ion-row>
+  
+         
+
+        </ion-grid>
+      </ion-card-content>
+
+  
+    </ion-card>
+  </ion-content>
+
+  <ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <ion-title>
+      <a href="http://cogwave.in" target="_blank" style="color: #fff; font-size: small; ">Powered by Cogwave Software Technologies</a>
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>

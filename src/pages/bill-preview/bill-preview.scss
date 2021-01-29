@@ -1,0 +1,27 @@
+page-bill-preview {
+
+    .card-h{
+        background-image: -webkit-linear-gradient(top right, #20E2D7 0%, #F9FEA5 100%);
+        background-image: -moz-linear-gradient(top right, #20E2D7 0%, #F9FEA5 100%);
+        background-image: -o-linear-gradient(top right, #20E2D7 0%, #F9FEA5 100%);
+        background-image: linear-gradient(to bottom left, #20E2D7 0%, #F9FEA5 100%);
+        }
+    .card-b{
+        background-image: -webkit-linear-gradient(bottom, #dfe9f3 0%, white 100%);
+        background-image: -moz-linear-gradient(bottom, #dfe9f3 0%, white 100%);
+        background-image: -o-linear-gradient(bottom, #dfe9f3 0%, white 100%);
+        background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+        }
+
+
+        
+
+}
+
+.btnRound{
+    opacity: initial !important;
+    border-radius: 7px;
+    font-size: x-small;
+    width: 100px !important;
+  }
+  

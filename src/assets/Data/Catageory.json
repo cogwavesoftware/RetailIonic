@@ -1,0 +1,26 @@
+    [
+       
+        {
+            "CategoryId": 1,
+            "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+            "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635695/shutterstock_150017666_h2deah.jpg",
+            "Category": "Rice"
+        },
+
+        {
+            "CategoryId": 2,
+            "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+            "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635695/shutterstock_150017666_h2deah.jpg",
+            "Category": "Dall"
+        },
+
+        {
+            "CategoryId": 3,
+            "description": "Start the meal off right with these delicious appetizer recipes for dips, finger foods and other tasty bites your guests can nibble on.",
+            "thumb": "http://res.cloudinary.com/ionicfirebaseapp/image/upload/c_scale,w_400/v1483635695/shutterstock_150017666_h2deah.jpg",
+            "Category": "Soap"
+        }
+      
+    ]
+  
+    

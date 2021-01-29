@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title">{{"Category" | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)="navcart()" class="header-btn-cart">
+                <ion-icon name="cart"></ion-icon>
+                <ion-badge class="carts" item-right color="danger">{{noOfItems}}</ion-badge>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let category of Categories">
+        <ion-list>
+            <ion-item (click)="navigate(category.CategoryId)">
+                <ion-thumbnail item-left>
+                    <!-- <img src="{{category.thumb}}"> -->
+                    <img  src="http://res.cloudinary.com/ionicfirebaseapp/image/upload/v1483635771/shutterstock_414301747_mtoc29.jpg" />
+                </ion-thumbnail>
+                <p class="heading">{{category.Category}}</p>
+                 <p> The main course is the featured or primary dish in a meal consisting of several courses. It usually follows the entrée ("entry") course.</p>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</ion-content>

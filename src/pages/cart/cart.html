@@ -1,0 +1,205 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{"MyCart" | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" class="header-btn">
+                <ion-icon name="cart"></ion-icon>
+                <div *ngIf="noOfItems > 0">
+                    <ion-badge class="carts" item-right color="danger">{{noOfItems}}</ion-badge>
+                </div>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content [ngClass]="{bg:!isCart()}">
+    <div *ngIf="!isCart()">
+        <ion-row>
+            <ion-icon class="empty-cart" name="cart"></ion-icon>
+        </ion-row>
+        <h4>Your Cart is empty!</h4>
+        <button ion-button class="empty-btn" (click)="gotoHome()">{{'Add Items' | translate}}</button>
+    </div>
+    <div *ngIf="isCart()">
+        <ion-list class="cart-list" *ngFor="let data of Cart">
+            <!-- item-list -->
+            <ion-item class="cart-item">
+                <!-- item -->
+                <ion-row class="full">
+                    <ion-col col-12>
+                        <!-- col-for item-image and details -->
+                        <ion-row>
+                            <ion-col col-4>
+                                <!-- item-image -->
+                                <!-- <img src={{data.item.thumb}} alt=""> -->
+                                <img  src="assets/img/items/{{data.item.title}}.jpg" alt="foodname"/> 
+                            </ion-col>
+                            <ion-col col-8>
+                                <p class="item-name" text-wrap>{{data.item.title}}</p>
+                                <p class="item-detail" text-wrap>{{"Quantity:" | translate}} {{data.item.itemQunatity}}</p>
+                                <p class="item-detail" text-wrap>{{"Size:" | translate}} {{data.item.Size}} </p>
+                                <!-- <p class="item-detail" text-wrap>{{"Size:" | translate}} {{data?.item?.price?.pname}}</p> 
+                                <span *ngIf="data.item.price.specialPrice">
+                                    <p class="item-detail">Price:
+                                        <span class="item-price">
+                                            <strong class="cut"> {{currency?.currencySymbol}}{{data.item.price.value | number:'.2-2'}}</strong>
+                                        </span>
+                                    </p>
+                                    <p class="item-detail">Special Price:
+                                        <span class="item-price">
+                                            <strong> {{currency?.currencySymbol}}{{data.item.price.specialPrice | number:'.2-2'}}</strong>
+                                        </span>
+                                    </p>
+                                </span>-->
+                                <span >
+                                    <p class="item-detail">{{"Price:" | translate}}
+                                        <span class="item-price"> {{currency?.currencySymbol}} {{ data.item.price | number:'.2-2'}}</span>
+                                    </p>
+                                    <b>₹ {{data.item.price * data.item.itemQunatity}}</b>
+                                </span>
+
+                                <!-- row-for count item -->
+
+                                <ion-row class="counter">
+                                    <!-- row-for count item -->
+                                    <ion-col col-10>
+
+                                        <div class="count">
+                                            <span class="item-count" (click)="remove(data)">
+                                                -
+                                            </span>
+                                            <span class="item-count show-count">
+                                                {{data.item.itemQunatity}}
+                                            </span>
+                                            <span class="item-count" (click)="add(data)">
+                                                +
+                                            </span>
+                                        </div>
+                                    </ion-col>
+                                    <ion-col col-2>
+                                        <ion-icon name="trash" (click)="deleteItem(data)"></ion-icon>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+                
+            </ion-item>
+        </ion-list>
+
+        <!-- <ion-row class="full">
+            <ion-col col-12>
+               
+                <ion-row>
+                    <ion-col col-4>
+                        
+                    </ion-col>
+                    <ion-col col-8>
+                      <ion-row>
+                        <ion-col col-10>
+                           <span>Remove All Item in Cart</span>
+                        </ion-col>
+                        <ion-col col-2>
+                            <ion-icon name="trash" (click)="deleteAll()"></ion-icon>
+                        </ion-col>
+                      </ion-row>
+                    </ion-col>
+                   
+                </ion-row>
+            </ion-col>
+        </ion-row> -->
+
+        
+           
+            
+              
+      
+        <ion-row class="price-details">
+            <ion-col class="calculate" col-12>
+                <p class="bill-detail">{{"Price Subtotal" | translate}}
+                    <span  >{{currency?.currencySymbol}} {{subTotal | number:'.2-2'}}</span>
+                </p>
+                <div *ngIf="deductedPrice">
+                    <p class="bill-detail">{{'Deducted Price' | translate}}
+                        <span > - {{currency?.currencySymbol}}{{deductedPrice | number:'.2-2'}}</span>
+                    </p>
+                </div>
+
+                <!-- <p class="bill-detail">{{"Total GST" | translate}}({{settings.totalVat }}%)
+                    <span>{{currency?.currencySymbol}}{{total}}</span>
+                </p> -->
+                 <!-- <p class="bill-detail">{{"Total GST" | translate}}( 5.00 %)
+                    <span >{{currency?.currencySymbol}} {{total | number:'.2-2'}}</span>
+                </p>  -->
+                <p class="bill-detail">{{"Delivery Charge" | translate}}
+                    <span >{{currency?.currencySymbol}} {{otherTaxes | number:'.2-2'}}</span>                   
+                </p>
+               
+                <hr>
+                <!-- <ion-row>
+                    <ion-col col-4 class="no-padding">
+                        <p class="bill-detail">{{"Apply Coupon" | translate}}</p>
+                    </ion-col>
+                    <ion-col col-8>
+
+                        <ion-item class="select-item">
+                            <ion-label>{{"Coupons" | translate}}</ion-label>
+                            <ion-select [(ngModel)]="couponDiscount" (ionChange)="applyCoupon()">
+                                <ion-option *ngFor="let coupon of coupons" value="{{coupon.value}}"> {{coupon.name}} &nbsp; ({{coupon.value}}%)
+                                </ion-option>
+                            </ion-select>
+                        </ion-item>
+
+                    </ion-col>
+
+                </ion-row>
+                <p class="coupon-applied" *ngIf="deductedPrice">Coupon Applied.</p> -->
+                <div class="cart-total">
+                    <strong>{{"Order Total" | translate}}</strong>
+                    <span class="price"> {{currency?.currencySymbol}} {{GrandTotal |round}}</span>
+                </div>
+            </ion-col>
+        </ion-row>
+        <!-- row-bill-details -->
+        <!-- continue button -->
+
+        <div>
+            <!-- <ion-list >
+                <ion-item class="">
+                    <ion-label>{{"Order Option:" |translate }}</ion-label>
+                    <ion-select [(ngModel)]="value"  (ionChange)="GetSelectedValue(value)">
+                        <ion-option *ngFor="let option of Deliveryoptions" value="{{option}}"> 
+                            {{option }}
+                        </ion-option>
+                    </ion-select>
+                </ion-item>
+            </ion-list> -->
+
+            <ion-list radio-group class="size-list">
+                <span style="text-align: center; display: block; ">Select Option</span>
+                <ion-item *ngFor="let item of Deliveryoptions; let i= index" class="size-list-item">
+                    <ion-label >{{item}} </ion-label>                                                            
+                    <ion-radio class="checked"  (ionSelect)="GetSelectedValue(item)"></ion-radio>
+                </ion-item>
+            </ion-list>
+       
+    
+    </div>
+
+        <ion-row>
+            <ion-col col-12>
+                <button ion-button block class="continueblue-btn" [disabled]="!retailOpen" (click)="nav()">{{"Continue"| translate}}</button>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>
+
+
+<ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <ion-title>
+      <a href="http://cogwave.in" target="_blank" style="color: #fff; font-size: small; ">Powered by Cogwave Software Technologies</a>
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>

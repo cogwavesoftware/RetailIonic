@@ -1,0 +1,61 @@
+
+
+
+
+<ion-header>
+
+  <ion-navbar>
+     <ion-title>Please Enter MobileNo</ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button color="light" clear icon-only (click)="dismissNCModal()">
+      <ion-icon name='md-close' is-active="true"></ion-icon>
+    </button>
+    </ion-buttons> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <ion-list>
+  <ion-item>
+     <ion-label floating>MobileNo</ion-label>
+     <ion-input  type="number"  [(ngModel)]="todo.Phone" #Phone (keyup)="CheckValue(Phone.value)" [ngModelOptions]="{standalone: true}" ></ion-input>
+  </ion-item>
+
+  <!-- <ion-item>
+    <ion-label floating>GuestName</ion-label>
+    <ion-input  type="text"  [(ngModel)]="todo.GuestName" #GuestName  [ngModelOptions]="{standalone: true}" ></ion-input>
+ </ion-item> -->
+
+ <ion-item *ngIf="IsGetOtpvissible">
+  <button  ion-button large color="danger"  (click)="GetOtp(Phone.value)" >Process Otp</button>
+</ion-item>
+
+ <ion-item *ngIf="isotpNo">
+  <ion-label floating>Enter OTP</ion-label>
+  <ion-input  type="number"  [(ngModel)]="todo.OTP" #OTP  [ngModelOptions]="{standalone: true}" ></ion-input>
+
+</ion-item>
+ <ion-badge *ngIf="isotpNo">Opt has been sent alreadt to your MobileNo Please Check</ion-badge>
+    <ion-item  *ngIf="iSvissible">
+        <button  ion-button large color="danger"   (click)="SubmitData()" >Submit</button>
+      </ion-item>
+  </ion-list> 
+
+         
+</ion-content> 
+
+
+
+<!-- <form (ngSubmit)="logForm()">
+  <ion-item>
+    <ion-label>Todo</ion-label>
+    <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-textarea [(ngModel)]="todo.description" name="description"></ion-textarea>
+  </ion-item>
+  <button ion-button type="submit" block>Add Todo</button>
+</form> -->

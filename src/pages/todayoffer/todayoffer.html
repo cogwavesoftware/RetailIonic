@@ -1,0 +1,55 @@
+<!--
+  Generated template for the TodayofferPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Today Offer</ion-title>
+    <ion-buttons start>
+      <button ion-button color="light" clear icon-only (click)="dismissNCModal()">
+      <ion-icon name='md-close' is-active="true"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div *ngIf="OfferMessage">
+  
+    <ion-card>
+      <ion-card-header style="background-color: yellowgreen; font-family: Verdana, Geneva, Tahoma, sans-serif; padding: 10px;">
+        No Offer...
+       
+      </ion-card-header>
+      <img   src="assets/img/nooffer.png"/>
+      <ion-card-content style="padding: 9px;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+      Sorry  No Offer try Next time...
+      </ion-card-content>
+    </ion-card>
+  </div> 
+  <div *ngFor="let data of  Offerdetails">
+    <ion-card>
+      <ion-card-header style="background-color: yellowgreen; font-family: Verdana, Geneva, Tahoma, sans-serif; padding: 10px;">
+        {{data.Header}}
+        
+      </ion-card-header>
+      <img   src="assets/img/specialoff.png"/>
+      <ion-card-content style="padding: 9px;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        {{data.Description}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+ 
+
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+    <a href="http://cogwave.in" target="_blank" style="color: #fff; font-size: small; font-family: verdana;">Powered by Cogwave Software Technologies</a>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

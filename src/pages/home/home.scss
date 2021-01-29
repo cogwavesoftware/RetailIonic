@@ -1,0 +1,240 @@
+page-home {
+  h2 {
+    margin-top: 1rem;
+  }
+  /*slider*/
+  .grid {
+    padding: 0px;
+    .slides {
+      .overlay {
+        background-image: linear-gradient(
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.4)
+        );
+        display: inline-flex;
+      }
+      .slider-img {
+        height: 220px;
+        width: 100%;
+        position: relative;
+        z-index: -111;
+      }
+      .slider-text {
+        color: #fff;
+        font-size: 22px;
+        padding: 5px;
+        position: absolute;
+        bottom: 0;
+        margin: 5px 0px;
+      }
+      .swiper-pagination-bullet {
+        background: $primary !important;
+      }
+    }
+
+    //banner image
+    .card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2em;
+      width: 100%;
+      font-weight: bold;
+      //color: #fff;
+    }
+
+    /*Categories*/
+
+    .categories {
+      flex-wrap: wrap;
+      h2 {
+        margin-top: -12px;
+        font-size: 2.7rem;
+        color: rgba(66, 66, 66, 0.87);
+        font-weight: 500;
+      }
+      img {
+        height: 110px;
+        width: 100%;
+        position: relative;
+        z-index: -111;
+      }
+      .text-over-img {
+        color: #fff;
+        font-size: 18px;
+        padding: 5px;
+        background-color: rgba(119, 119, 119, 0.6);
+        position: relative;
+        width: 100%;
+        margin: -34px 0px 0px 0px;
+        text-align: center;
+      }
+    }
+
+    
+  }
+
+
+  .imgcat {
+    height: 60px;
+    width: 50%;
+    position: relative;
+    z-index: -111;
+  }
+
+  .text-over-imgcat1 {
+    color: #fff;
+    font-size: 18px;
+    //padding: 5px;
+   // background-color: rgba(119, 119, 119, 0.6);
+    position: relative;
+    width: 50%;
+    //margin: -22px 34px 8px 92px;
+    margin: -22px 5px 3px 12px;
+    text-align: center;
+  }
+  hr.new4 {
+    border: 0px solid black;
+  }
+
+  .count {
+    padding: 10px 0px;
+    margin: 10px;
+    .item-count {
+      //padding: 11.5px 20px;
+      //font-size: 20px;
+      padding: 10.5px 20px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #fff;
+      background-color: #777;
+
+    }
+    .show-count {
+      background-color: $primary !important;
+    }
+  }
+  .label {
+    margin: 0px 0px 0px 0;
+  }
+  .btn-add-to-cart {
+    background-color: $primary !important;
+    color: $white;
+    padding: 17.2px;
+    box-shadow: none;
+    font-size: 10px;
+    margin: 0px;
+  }
+
+  .catagory {
+    img {
+      height: 100px;
+      width: 100%;
+    }
+    .item-name {
+      font-weight: 500;
+      font-size: 15px;
+     // font-family:cursive ;
+      
+    }
+    .item-detail {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      line-height: 16px;
+      max-height: 62px;
+    }
+    .item-price {
+      font-weight: 700;
+      color: $primary;
+     // font-family:cursive ;
+    }
+  }
+
+  .slider-pager-page
+  {
+    color: white;
+    fill: #f90;
+    stroke: red;
+    background-color: blue;
+  }
+  .slider-pager-page.active
+  {
+    fill: #f90;
+    stroke: red;
+    color: blue;
+    background-color: red;
+  }
+
+
+
+  .slider-img {
+    height: 220px;
+    width: 100%;
+    position: relative;
+    z-index: -111;
+  }
+  .card-title {
+    position: absolute;
+    top: 77%;
+    font-size: 2.2rem;
+    width: 100%;
+    font-weight: bold;
+    color:#fff;
+    //background-color: rgba(255, 255, 255, 0.7);
+    padding: 8px;
+  }
+
+  .counter {
+    margin: 0px 2px 0px 2px;
+    padding: 3px 6px 3px 6px;
+}
+.counterButton {
+    font-size: 20px;
+    border: 1px solid #32cd32 ;
+    border-radius: 50%;
+    background-color:#32cd32 ;
+    text-align: center;
+    color: black;
+    width: 25px;
+  
+  
+  //  font-family:cursive ;
+}
+.my-custom-class {
+  --background: #222;
+  --spinner-color: #fff;
+
+  color: #fff;
+}
+
+
+.cut {
+  text-decoration: line-through;
+  color: $grey;
+}
+.offer-p {
+  color: $primary;
+  font-size: 18px;
+  font-weight: 700;
+}
+// .quantity {
+//   padding-top: 20px;
+//   margin-right: 60px;
+// }
+// .quantity input {
+//   -webkit-appearance: none;
+//   border: none;
+//   text-align: center;
+//   width: 32px;
+//   font-size: 16px;
+//   color: #43484D;
+//   font-weight: 300;
+// }
+a.disabled {
+  color: gray;
+  cursor: not-allowed;
+  text-decoration: underline;
+}
+
+
+}

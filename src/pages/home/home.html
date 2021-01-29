@@ -1,0 +1,187 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title class="title">{{"Retail App" | translate}}
+    </ion-title>
+    <ion-buttons end>
+
+      <button ion-button icon-only color="royal" (click)="OfferPage()" class="header-btn-cart" *ngIf="OfferCount" >
+        <!-- <ion-icon name="cart"></ion-icon> -->
+        <img   src="assets/img/Offer.png" style="size: 0cm;" class=""/>
+        <ion-badge class="carts" item-right color="danger">{{OfferCount}}</ion-badge>
+      </button>
+
+
+      <button ion-button icon-only color="royal" (click)="navcart()" class="header-btn-cart">
+        <ion-icon name="cart"></ion-icon>
+        <ion-badge class="carts" item-right color="danger">{{noOfItems}}</ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+ 
+
+  
+
+  <ion-grid class="grid">
+    
+    <h5 style="text-align: center;" >{{"Select Categories" | translate}}</h5>
+
+
+  
+
+
+    <ion-row class="categories">
+      <!-- first row -->
+      <ion-slides pager initialSlide=0 speed=1000 loop=true dir="rtl" class="" >
+
+        <ion-slide *ngFor="let item of Categories"  (click)="navigateretail(item.CategoryId)" >
+          <div class="overlay">
+            <!-- <img src={{item.thumb}} class="slider-img">  -->
+            <img  src="assets/img/category/{{item.Category}}.jpg" alt="foodname"/>
+
+          </div>
+           <div  class="card-title text-over-imgcat">{{item.Category}}</div>
+        </ion-slide>
+
+
+      </ion-slides>
+    </ion-row>
+    <div *ngIf="statusRes!=0">
+      <h5 text-center>{{statusRes}}</h5> 
+    </div>
+  </ion-grid>
+
+
+
+
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="{{'Type Item Name' | translate}}">
+  </ion-searchbar>
+  <ion-list *ngFor="let item of items ; let i=index ">
+      <!-- list    -->
+      <ion-item text-wrap   >
+  
+          <!-- item -->
+          <ion-row class="catagory">
+              <!-- row -->
+              <ion-col col-3>
+                  <!-- col with 50  width -->
+                  <!-- <img src={{item.thumb}} alt="foodname" />   -->
+                  <img  src="assets/img/items/{{item.ItemName}}.jpg" alt="foodname"/>
+                 
+              </ion-col>
+              <ion-col col-9>
+                  <!-- col with 50% width -->
+                  <p class="item-name">{{item.ItemName }}</p>
+
+
+                  <br>
+                  <p class="item-detail">
+                       <span class="item-price">₹ {{item.ItemRate |  number:'.2-2'}}
+                      </span> &nbsp;&nbsp;
+                      <span style="text-decoration: line-through;">₹ {{item.OfferRate}} </span> &nbsp;&nbsp;
+                    <span style="color:green; font-size: 15px; font-weight: 700px;"> {{item.VatPer}} % off</span>
+                  </p>
+                                           
+                <ion-buttons  *ngIf="item.SubQty==1" start>   
+                  
+                  
+                 <!-- <button ion-button block outline  icon-end> {{item.Size}}
+                  <ion-icon name="arrow-dropdown"></ion-icon> 
+                </button>  -->
+                
+           <a  (click)="Check(item.ItemCode)"  ion-button color="light" class="">                       
+                    {{item.Size}}  &nbsp; &nbsp; &nbsp;
+                    <ion-icon name="arrow-dropdown"></ion-icon>
+                  </a>  
+                </ion-buttons>
+
+                <ion-buttons *ngIf="item.SubQty==0" start>    
+
+                  <a   disabled=true (click)="Check(item.ItemCode)"  ion-button color="light" class="">                       
+                   {{item.Size}}  &nbsp; &nbsp; &nbsp;
+                   <ion-icon name="arrow-dropdown"></ion-icon>
+                 </a> 
+               </ion-buttons>
+
+                   
+                    <ion-buttons end  *ngIf= "item.Qty >0" >
+
+                     
+                      <!-- <a style="font-family: cursive;"  (click)="Check(item.ItemCode)"  ion-button color="light" class="">                       
+                        {{item.Size}}  &nbsp; &nbsp; &nbsp;
+                        <ion-icon name="arrow-dropdown"></ion-icon>
+                      </a>          
+                       -->
+                  
+
+
+                      <button class="counterButton" (click)="removeQuantity(i,item,item.Qty)">
+                          -
+                      </button>
+                      
+                        
+                     
+                      <span  class="counter">
+                        <ion-spinner *ngIf="Show" name="bubbles"> </ion-spinner>
+                        {{item.Qty}}
+                        
+                    </span>
+                      <button class="counterButton" (click)="addQuantity(item,i)">
+                          +
+                      </button>
+                    </ion-buttons>
+
+                 
+
+
+                 
+                 
+                    <ion-buttons end *ngIf= "item.Qty ==0">
+
+                      <!-- <a style="font-family: cursive;"   (click)="Check(item.ItemCode)"  ion-button color="light" class="">                       
+                        {{item.Size}}  &nbsp; &nbsp; &nbsp;
+                        <ion-icon name="arrow-dropdown"></ion-icon>
+                      </a> -->
+<!--     
+                      <a   (click)="addQuantity(item,i)" ion-button icon-left  class="btn-add-to-cart pull-right ">
+                      <ion-icon name="cart"></ion-icon>
+                      &nbsp; {{"ADD" | translate}}
+                       </a> -->
+
+                       <button  [disabled]="!item.OIDAvailable"  class="btn-add-to-cart pull-right "  ion-button icon-left  (click)="addQuantity(item,i)">
+                        <ion-icon name="cart"></ion-icon> &nbsp; {{"ADD" | translate}}
+                       
+                      </button>
+
+
+                       
+                    </ion-buttons>
+
+
+
+                 
+                
+              </ion-col>
+             
+          </ion-row>
+          <hr class="new4" >
+          <!--end row -->
+      </ion-item>
+      <!-- item -->
+  </ion-list>
+
+ 
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+    <a href="http://cogwave.in" target="_blank" style="color: #fff; font-size: small;padding: 5px;">Powered by Cogwave Software Technologies</a>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

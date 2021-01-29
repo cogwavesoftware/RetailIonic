@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title">{{"Payment Options" |translate}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+     <ion-list radio-group class="radio-list">
+        <p class="card-title">Payment Options</p>
+        <ion-list radio-group>
+            <ion-row class="card-type">
+                <ion-col col-12 *ngFor=" let payment of paymentTypes">
+                    <ion-item class="radio-item">
+                        <ion-label>{{payment.type}}</ion-label>
+                        <ion-radio item-left value="{{payment.value}}" checked={{payment.default}} (ionSelect)="choosePaymentType(payment.type)"></ion-radio>
+                        <img *ngIf="payment.logo" src="{{payment.logo}}" item-right>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-list>
+        <h6 class="form-title"></h6>    
+    </ion-list> 
+    <div >
+
+        <ion-row style="color:white">
+            <ion-col col-12>
+                <div class="thanks">
+                    <h2>{{"Dear Guest !" | translate}}</h2>
+                    <p>{{"We love our customers and we value your business. we want to thank you for giving us the oppurtunity to
+                        serve you. Our customer service always open to hear feedback from you.thanks you!" | translate}}
+                    </p>
+
+                    <br>
+                    <p>{{" Dear Guest your order will get conform soon from executive .You will receive Comformation Message you can click the link you can pay your Amount !" | translate}}
+                    </p>
+                </div>
+            </ion-col>
+        </ion-row>
+        <div class="btn-wrapper">
+            <button ion-button full class="btn-lg" type="button"  (click)="onCheckOut()">Confirm Order
+               
+            </button>
+        </div>
+     
+      
+    
+    
+    </div>
+  
+</ion-content>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2 style="text-align:center">THANK YOU</h2>
+        <img src="~/Content/images/ok-hand.gif" style="text-align: center;
+margin: 0 auto;
+display: block;" />
+        <p style="color:#f0ff13;text-align:center">Thank you for Submiting GuestForm. Welcome to @ViewBag.Name  - Your  Checkin detail we will send you via Smslink ...</p>
+
+        <p style="font-weight:bold;text-align:center">Contact details :</p>
+        <p style="text-align:center">Cogwave Software Technologies,<br />Srirama plaza, 158/4,2nd floor,<br />  D.V.G Road,Basavangudi,<br /> Bengaluru 560004 <br />Tel: 080 4710121</p>
+
+
+        <p style="text-align:center">
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </p>
+    </div>
+
+</div>

@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title class="title">{{"Add Address" | translate}}</ion-title>
+      <ion-buttons start>
+        <button ion-button color="light" clear icon-only (click)="dismissNCModal()">
+        <ion-icon name='md-close' is-active="true"></ion-icon>
+      </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <ion-list class="adress-line">
+      <form (ngSubmit)="addAddress(f)" #f="ngForm">
+          <ion-label class="add-heading">
+              <ion-icon ios="ios-home" md="md-home"></ion-icon>
+              &nbsp;&nbsp; {{"Enter Address" | translate}}
+          </ion-label> 
+          <ion-row class="full-address">
+              <ion-item class="sub-address">
+                  <ion-input type="text" placeholder="{{'Name' | translate}}" name="CustName" id="CustName" [(ngModel)]="address.CustName" required></ion-input>
+              </ion-item>
+              <ion-item class="sub-address">
+                  <ion-input type="text" placeholder="{{'City' | translate}}" name="City" id="City" [(ngModel)]="address.City" required></ion-input>
+              </ion-item>
+              <ion-item class="sub-address">
+                  <ion-input type="number" placeholder="{{'Pincode' | translate}}" name="PinCode" id="PinCode" [(ngModel)]="address.PinCode"
+                      required></ion-input>
+              </ion-item>
+             
+              <ion-item class="sub-address">
+                  <ion-input type="text" name="Area" id="Area" placeholder="{{'Area / Locality' | translate}}" [(ngModel)]="address.Area"></ion-input>
+              </ion-item>
+              <ion-item class="sub-address">
+                  <ion-input type="text" name="Email" id="Email" placeholder="{{'Email' | translate}}" [(ngModel)]="address.Email"></ion-input>
+              </ion-item>
+            
+              <ion-item class="sub-address address-textarea">
+                  <ion-textarea rows="3" placeholder="{{'Address' | translate}}" name="Address" id="Address" [(ngModel)]="address.Address"
+                      required></ion-textarea>
+              </ion-item>
+
+          
+              <ion-item class="sub-address">
+                <ion-input type="number" #Mobile    name="Mobile" id="Mobile" [(ngModel)]="address.Mobile" placeholder="{{'Mobile' | translate}}"></ion-input>
+            </ion-item>
+           
+
+          </ion-row>
+          <button class="checkOut-btn" ion-button block type="submit" >
+              <ion-icon ios="ios-add" md="md-add"></ion-icon>
+              &nbsp;&nbsp;{{"Save Address" | translate}}
+          </button>
+          <!-- [disabled]="!f.valid" -->
+      </form>
+  </ion-list>
+</ion-content>
+
+
+<ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <ion-title>
+      <a href="http://cogwave.in" target="_blank" style="color: #fff; font-size: medium; font-family: verdana;">Powered by Cogwave Software Technologies</a>
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>

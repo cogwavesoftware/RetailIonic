@@ -1,0 +1,164 @@
+[
+    {
+        "CatCode": 1,
+        "ItemCode": 100,
+        "ItemName": "Real Fruit Juice Mixed",
+        "ItemRate": 200,
+        "Qty" : 0,
+        "Size" : "100 Ml",
+        "offerPercentage":10,
+        "MainItemCode":100,
+        "IsMain":true,
+        "thumb":"assets/img/items/P.jpeg",
+        "SubItemQty":1  
+    },
+    {
+        "CatCode": 1,
+        "ItemCode": 101,
+        "ItemName": "Tata Gold Tea Pounch",
+        "ItemRate": 300,
+        "Qty" : 0,
+        "Size" : "100 Ml",
+        "offerPercentage":10, 
+        "MainItemCode":101,
+        "IsMain":true,
+        "thumb":"assets/img/items/K.jpeg",
+        "SubItemQty":0  
+    },
+
+    {
+        "CatCode": 1,
+        "ItemCode": 103,
+        "ItemName": "Parle Khatta Meetha Mixture",
+        "ItemRate": 200,
+        "Qty" : 0,
+        "Size" : "100 ml",
+        "offerPercentage":10,
+        "MainItemCode":100,
+        "IsMain":false,
+        "thumb":"assets/img/items/s.jpeg"  ,
+        "SubItemQty":0   
+    },
+    {
+        "CatCode": 1,
+        "ItemCode": 104,
+        "ItemName": "Pale g Gold Biscuits",
+        "ItemRate": 300,
+        "Qty" : 0,
+        "Size" : "100 Ml",
+        "offerPercentage":10, 
+        "MainItemCode":100,
+        "IsMain":false,
+        "thumb":"assets/img/items/B.jpeg",
+        "SubItemQty":0       
+    },
+    {
+        "CatCode": 1,
+        "ItemCode": 105,
+        "ItemName": "Pale g Gold Biscuits105",
+        "ItemRate": 300,
+        "Qty" : 0,
+        "Size" : "100 Ml",
+        "offerPercentage":10, 
+        "MainItemCode":100,
+        "IsMain":false,
+        "thumb":"assets/img/items/C.jpeg",
+        "SubItemQty":0   
+    },
+    {
+        "CatCode": 1,
+        "ItemCode": 106,
+        "ItemName": "Pale g Gold Biscuits106",
+        "ItemRate": 300,
+        "Qty" : 0,
+        "Size" : "100 Ml",
+        "offerPercentage":10, 
+        "MainItemCode":100,
+        "IsMain":false,
+        "thumb":"assets/img/items/D.jpeg",
+        "SubItemQty":0   
+    
+    },
+    {
+        "CatCode": 1,
+        "ItemCode": 107,
+        "ItemName": "Pale g Gold Biscuits107",
+        "ItemRate": 300,
+        "Qty" : 0,
+        "Size" : "100 Ml",
+        "offerPercentage":10, 
+        "MainItemCode":100,
+        "IsMain":false,
+        "thumb":"assets/img/items/S1.jpeg" ,
+        "SubItemQty":0    
+    },
+    {
+        "CatCode": 1,
+        "ItemCode": 108,
+        "ItemName": "Pale g Gold Biscuits108",
+        "ItemRate": 300,
+        "Qty" : 0,
+        "Size" : "100 Ml",
+        "offerPercentage":10, 
+        "MainItemCode":100,
+        "IsMain":false,
+        "thumb":"assets/img/items/N.jpeg"  ,
+        "SubItemQty":0   
+    },
+   
+    {
+        "CatCode": 1,
+        "ItemCode": 109,
+        "ItemName": "Real Fruit Juice Mixed",
+        "ItemRate": 200,
+        "Qty" : 0,
+        "Size" : "2 Ltr",
+        "offerPercentage":10,
+        "MainItemCode":109,
+        "IsMain":true,
+        "thumb":"assets/img/items/D.jpeg",
+         "SubItemQty":1  
+    },
+    {
+        "CatCode": 1,
+        "ItemCode": 110,
+        "ItemName": "Tata Gold Tea Pounch",
+        "ItemRate": 300,
+        "Qty" : 0,
+        "Size" : "5 Ltr",
+        "offerPercentage":10, 
+        "MainItemCode":110,
+        "IsMain":true,
+        "thumb":"assets/img/items/K.jpeg",
+        "SubItemQty":0  
+    },
+
+    
+    {
+        "CatCode": 1,
+        "ItemCode": 111,
+        "ItemName": "Real Fruit Juice Mixed",
+        "ItemRate": 200,
+        "Qty" : 0,
+        "Size" : "5 kg",
+        "offerPercentage":10,
+        "MainItemCode":111,
+        "IsMain":true,
+        "thumb":"assets/img/items/S1.jpeg",
+         "SubItemQty":1  
+    },
+    {
+        "CatCode": 1,
+        "ItemCode": 112,
+        "ItemName": "Tata Gold Tea Pounch",
+        "ItemRate": 300,
+        "Qty" : 0,
+        "Size" : "1 kg",
+        "offerPercentage":10, 
+        "MainItemCode":112,
+        "IsMain":true,
+        "thumb":"assets/img/items/s.jpeg",
+        "SubItemQty":0  
+    }
+
+]

@@ -1,0 +1,99 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title class="title">{{"Choose Quanity" | translate}}</ion-title> 
+        <ion-buttons start>
+          <button ion-button color="light" clear icon-only (click)="dismissNCModal()">
+          <ion-icon name='md-close' is-active="true"></ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content >
+ 
+    <div style="overflow-y: scroll">
+
+    
+    
+  <!-- <h6 style="font-family: cursive;text-align: center;">Choose Quanity</h6>
+     -->
+  <hr>
+
+    <ion-list *ngFor="let item of items ; let i=index"  >
+        <!-- list    -->
+        <ion-item text-wrap   >
+  
+            <!-- item -->
+            <ion-row class="catagory">
+                <!-- row -->
+                <ion-col col-3>
+                    <!-- col with 50  width -->
+                    <img  style="height: auto" src="assets/img/items/{{item.ItemName}}.jpg" alt="foodname"/>
+                    
+                </ion-col>
+                <ion-col col-9>
+                    <!-- col with 50% width -->
+                    <p class="item-name">{{item.ItemName}}</p>
+  
+  
+                    <p class="item-detail">
+                         <span class="item-price">₹ {{item.ItemRate |  number:'.2-2'}}
+                        </span> &nbsp;&nbsp;
+                        <span style="text-decoration: line-through;">₹ {{item.OfferRate}} </span> &nbsp;&nbsp;
+                      <span style="color:green; font-size: 15px; font-weight: 700px;">{{item.VatPer}} % off</span>
+                    </p>
+                   
+                    <p class="item-name">Size:{{item.Size}}</p>          
+                    <div class="count"  *ngIf= "item.Qty >0" >
+                     
+                      <ion-buttons end>
+  
+                                
+                      
+                        <button class="counterButton" (click)="removeQuantity(i,item,item.Qty)">
+                            -
+                        </button>
+                                               
+                        <span  class="counter">
+                          <ion-spinner *ngIf="Show" name="bubbles"> </ion-spinner>
+                          {{item.Qty}}
+                          
+                      </span>
+                        <button class="counterButton" (click)="addQuantity(item,i)">
+                            +
+                        </button>
+                      </ion-buttons>
+  
+                    </div>
+  
+  
+                    <div class="" *ngIf= "item.Qty ==0">                                 
+                      <ion-buttons end>
+  
+                       
+      
+                        <!-- <a  (click)="addQuantity(item,i)" ion-button icon-left  class="btn-add-to-cart pull-right ">
+                        <ion-icon name="cart"></ion-icon>
+                        &nbsp; {{"ADD" | translate}}
+                         </a> -->
+
+
+                         <button  [disabled]="!item.OIDAvailable"  class="btn-add-to-cart pull-right "  ion-button icon-left  (click)="addQuantity(item,i)">
+                          <ion-icon name="cart"></ion-icon> &nbsp; {{"ADD" | translate}}
+                         
+                        </button>
+
+                      </ion-buttons>
+  
+                    </div>
+                  
+                </ion-col>
+               
+            </ion-row>
+            <hr class="new4" >
+            <!--end row -->
+        </ion-item>
+        <!-- item -->
+    </ion-list>
+</div>
+  </ion-content>
